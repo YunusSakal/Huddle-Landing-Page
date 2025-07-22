@@ -331,7 +331,7 @@ footer {
     main {
         flex-direction: row;
         text-align: left;
-        gap: 10px;
+        gap: 40px;
         margin-top: 80px;
     }
 

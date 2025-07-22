@@ -1,0 +1,381 @@
+/* -------------------- */
+/* 1. TEMEL AYARLAR VE DEĞİŞKENLER */
+/* -------------------- */
+/* Renk paleti için CSS değişkenleri. */
+:root {
+    --violet: hsl(257, 40%, 49%);
+    --soft-magenta: hsl(300, 69%, 71%);
+    --white: #ffffff;
+}
+
+/* Tüm elemanlar için temel sıfırlama kuralları. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sayfanın genel stilleri. */
+body {
+    position: relative; /* Footer konumlandırması için gerekli. */
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--violet);
+    background-image: url('./images/bg-mobile.svg'); /* Mobil için varsayılan arka plan. */
+    background-repeat: no-repeat;
+    background-size: contain; /* Arka plan görselini taşmadan sığdır. */
+    background-position: top center; /* Arka plan görselini yukarı ve ortaya hizala. */
+    color: var(--white);
+    min-height: 100vh;
+    display: flex; /* İçerikleri dikey sırala. */
+    flex-direction: column;
+    overflow-x: hidden; /* Yatay kaydırmayı engelle. */
+}
+
+/* Sayfa içeriğini merkezleyen ana kapsayıcı. */
+.container {
+    width: 90%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 30px 0;
+    flex-grow: 1; /* Konteynerin dikeyde alanı kaplamasını sağla. */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Başlık (h1) için yazı tipi. */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+/* -------------------- */
+/* 2. ANA YAPI (HEADER, MAIN, FOOTER) */
+/* -------------------- */
+/* Sayfa başlığı bölümü. */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 100; /* Menünün üzerinde kalmasını sağlar. */
+}
+
+/* Logo boyutu. */
+.logo img {
+    width: 150px;
+}
+
+/* Ana içerik alanı (hero). */
+main {
+    display: flex;
+    flex-direction: column; /* Mobil varsayılan: dikey sıralama. */
+    align-items: center;
+    gap: 60px; /* Görsel ve metin arası boşluk. */
+    flex-grow: 1; /* Main içeriğinin container içinde büyümesini sağla. */
+}
+
+/* Hero görsel kapsayıcısı. */
+.hero-image {
+    width: 100%; /* Tam genişliği kapla. */
+    display: flex;
+    justify-content: center; /* Görseli ortala. */
+    align-items: center;
+}
+
+/* Hero illüstrasyon görselinin responsive boyutlandırması. */
+.hero-image img {
+    max-width: 100%; /* Kapsayıcısından taşmasını engeller. */
+    height: auto; /* Oranını korur. */
+    display: block;
+}
+
+/* Tanıtım metni alanı. */
+.hero-text {
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* Tanıtım başlığı. */
+.hero-text h1 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Tanıtım paragrafı. */
+.hero-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Sayfa altbilgisi. */
+footer {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center; /* İkonları ortala. */
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+/* -------------------- */
+/* 3. BİLEŞENLER (BUTON, SOSYAL İKONLAR) */
+/* -------------------- */
+/* Kayıt ol butonu. */
+.btn-register {
+    background-color: var(--white);
+    color: var(--violet);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 70px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s; /* Hover animasyonu. */
+}
+
+/* Sosyal medya ikonları. */
+.social-icons a {
+    color: var(--white);
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s, border-color 0.3s; /* Hover animasyonu. */
+}
+
+/* Sosyal medya ikon boyutu. */
+.social-icons i {
+    font-size: 0.9rem;
+}
+
+/* -------------------- */
+/* 4. HOVER EFEKTLERİ */
+/* -------------------- */
+/* Kayıt ol butonu hover. */
+.btn-register:hover {
+    background-color: var(--soft-magenta);
+    color: var(--white);
+}
+
+/* Sosyal medya ikonları hover. */
+.social-icons a:hover {
+    color: var(--soft-magenta);
+    border-color: var(--soft-magenta);
+}
+
+/* Navigasyon linkleri hover. */
+.nav-menu a:hover {
+    color: var(--soft-magenta);
+    text-decoration: underline;
+}
+
+/* -------------------- */
+/* 5. MOBİL NAVİGASYON (HAMBURGER MENÜ) */
+/* -------------------- */
+/* Hamburger menü buton stilleri. */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 100;
+}
+
+/* Hamburger menü çubukları. */
+.hamburger-menu span {
+    width: 2rem;
+    height: 0.25rem;
+    background: var(--white);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+/* Mobil navigasyon menüsü (varsayılan olarak gizli). */
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--violet);
+    height: 100vh;
+    text-align: center;
+    padding: 2rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%); /* Başlangıçta ekran dışında. */
+    width: 100%;
+    z-index: 50;
+}
+
+/* Menü aktifken görünür hale gelme. */
+.nav-menu.active {
+    transform: translateX(0);
+}
+
+/* Navigasyon listesi ve öğeleri. */
+.nav-menu ul {
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-bottom: 2rem;
+}
+
+/* Navigasyon linkleri. */
+.nav-menu a {
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+/* -------------------- */
+/* 6. HAMBURGER MENÜ ANİMASYONU */
+/* -------------------- */
+/* Hamburger aktifken X şekline dönüşme animasyonu. */
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+/* -------------------- */
+/* 7. RESPONSIVE TASARIM (MASAÜSTÜ) */
+/* -------------------- */
+/* Masaüstü cihazlar için (992px ve üzeri). */
+@media (min-width: 992px) {
+    /* Masaüstü arka plan. */
+    body {
+        background-image: url('./images/bg-desktop.svg');
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /* Kapsayıcı padding. */
+    .container {
+        padding: 40px 0;
+    }
+    
+    /* Header hizalaması. */
+    header {
+        align-items: baseline;
+        margin-bottom: 0;
+    }
+
+    /* Masaüstü logo boyutu. */
+    .logo img {
+        width: 200px;
+    }
+    
+    /* Masaüstünde hamburgeri gizle. */
+    .hamburger-menu {
+        display: none;
+    }
+
+    /* Masaüstü navigasyon menüsü (yatay). */
+    .nav-menu {
+        position: static;
+        transform: translateX(0);
+        flex-direction: row;
+        height: auto;
+        background: transparent;
+        padding: 0;
+        width: auto;
+    }
+
+    /* Masaüstü navigasyon listesi. */
+    .nav-menu ul {
+        display: flex;
+        gap: 3rem;
+    }
+
+    .nav-menu li {
+        margin-bottom: 0;
+    }
+
+    /* Masaüstü navigasyon linkleri. */
+    .nav-menu a {
+        color: var(--white);
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    
+    /* Masaüstü ana içerik düzeni (yatay). */
+    main {
+        flex-direction: row;
+        text-align: left;
+        gap: 40px;
+        margin-top: 80px;
+    }
+
+    /* Masaüstü hero görsel boyutu. */
+    .hero-image {
+        flex: 1.2;
+    }
+    
+    /* Masaüstü hero görseli. */
+    .hero-image img {
+        width: 100%;
+    }
+
+    /* Masaüstü hero metin alanı. */
+    .hero-text {
+        flex: 1;
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    /* Masaüstü başlık (h1) boyutu. */
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Masaüstü footer konumu (sağ altta sabit). */
+    footer {
+        position: absolute;
+        right: 40px;
+        bottom: 40px;
+        margin-top: 0;
+        justify-content: flex-end;
+        width: auto;
+    }
+
+    /* Masaüstü sosyal ikon boyutları. */
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+        margin: 0 8px;
+    }
+
+    /* Masaüstü sosyal ikon yazı boyutu. */
+    .social-icons i {
+        font-size: 1.1rem;
+    }
+}

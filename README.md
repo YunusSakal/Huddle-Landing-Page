@@ -10,13 +10,14 @@ Projenin canlı halini aşağıdaki linkten inceleyebilirsiniz:
 
 
 
-### Masaüstü Görünümü
+###  Masaüstü Görünümü
 
-<img src="./desktop-preview.jpg" alt="Huddle Landing Page Masaüstü Görünümü" width="800">
+<img src="images/desktop-preview.png" alt="Huddle Landing Page Masaüstü Görünümü" width="800">
 
-### Mobil Görünümü
+###  Mobil Görünümü
 
-<img src="./mobile-preview.jpg" alt="Huddle Landing Page Mobil Görünümü" width="400">
+<img src="images/mobile-preview.png" alt="Huddle Landing Page Mobil Görünümü" width="400">
+
 
 ## Kullanılan Teknolojiler
 

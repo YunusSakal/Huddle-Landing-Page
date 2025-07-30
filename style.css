@@ -18,7 +18,7 @@
 /* Sayfanın genel stilleri. */
 body {
     position: relative; /* Footer konumlandırması için gerekli. */
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans';
     background-color: var(--violet);
     background-image: url('./images/bg-mobile.svg'); /* Mobil için varsayılan arka plan. */
     background-repeat: no-repeat;
@@ -44,7 +44,7 @@ body {
 
 /* Başlık (h1) için yazı tipi. */
 h1 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-weight: 600;
 }
 
@@ -98,7 +98,7 @@ main {
 
 /* Tanıtım başlığı. */
 .hero-text h1 {
-    font-size: 1.5rem;
+    font-size: 1.475rem;
     line-height: 1.5;
     margin-bottom: 20px;
 }
@@ -107,7 +107,7 @@ main {
 .hero-text p {
     font-size: 1rem;
     line-height: 1.7;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
 /* Sayfa altbilgisi. */
@@ -116,7 +116,7 @@ footer {
     display: flex;
     justify-content: center; /* İkonları ortala. */
     width: 100%;
-    padding-bottom: 20px;
+    padding-bottom: 18px;
 }
 
 /* -------------------- */
@@ -126,7 +126,7 @@ footer {
 .btn-register {
     background-color: var(--white);
     color: var(--violet);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-size: 1rem;
     border: none;
     border-radius: 50px;
@@ -241,7 +241,7 @@ footer {
 .nav-menu a {
     color: var(--white);
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-size: 1.5rem;
     font-weight: 600;
     transition: color 0.3s;
